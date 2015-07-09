@@ -1,9 +1,9 @@
 # C Equivalent to Cracking the Coding Interview
 
 
-So here's my attempt to manually write the solutions provided in Cracking the Coding Interview rather than following the provided Java soltuions.
+So here's my attempt to solve the questions provided in Cracking the Coding Interview in the C++ programming language rather than following the provided Java solutions.
 
-You can read about my thought process here:
+You can read about my thought process here: http://cppcodinginterview.blogspot.in/
 
 Note: This isn't perfect. I solved the questions by first thinking how to solve it.
 
