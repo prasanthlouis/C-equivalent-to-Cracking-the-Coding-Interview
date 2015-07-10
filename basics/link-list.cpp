@@ -1,6 +1,15 @@
 //This is no way near efficient. Just playing around
 
 
+/*Coming back to this I feel like laughing. Use for loops for entering data.
+ for (i=0;i<10;i++){
+  cond->x=data;
+  cond->next=new node;
+  cond=cond->next;
+}
+cond->x=NULL;
+*/
+
 #include <iostream>
 #include<stdio.h>
 using namespace std;
