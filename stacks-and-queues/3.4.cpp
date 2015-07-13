@@ -1,44 +1,40 @@
-#include<iostream>
+#include <iostream>
 #include<stack>
 using namespace std;
-class stacks
+class stacky
 {
-public: stack<int> st;  
-        void moveto(int,stacks,stacks,stacks);
-        void poptop(stacks,stacks);
+public: stack<int> st;	
+        //void popy(stacky &);
 };
-void stacks:: poptop(stacks origin,stacks destination)
+stacky origin,buffer,destination;
+void popy(stacky &origin, stacky &destination)
 {
-    stack<int> dt;
-    int x=origin.st.top();
-    destination.st.push(x);
-    for(dt=destination.st;!dt.empty();dt.pop())
-    cout<<dt.top();
-    origin.st.pop();
-    
+    	stack<int> dt;
+    	
+	int x=origin.st.top();
+	destination.st.push(x);
+	origin.st.pop();
+	
 }
-void stacks:: moveto(int n,stacks origin,stacks destination,stacks buffer)
+void moveto(int n,stacky &origin, stacky &destination, stacky &buffer)
 {
-    if(n>=1)
-    {
-    moveto(n-1,origin,buffer,destination);
-    poptop(origin,destination);
-    buffer.moveto(n-1,origin,destination,buffer);
-    }
-        
-    }
-int main()
-{
-   int i;
-   stack<int> dt;
-   stacks origin,buffer,destination;
-   for(i=1;i>=0;i--)
-   origin.st.push(i);
-   for(dt=origin.st;!dt.empty();dt.pop())
-   cout<<dt.top();
-   origin.moveto(2,origin,destination,buffer);
-   for(dt=destination.st;!dt.empty();dt.pop())
-   cout<<dt.top();
-}  
-   
+	if(n>0)
+	{
+	moveto(n-1,origin,buffer,destination);
+	popy(origin,destination);
+	moveto(n-1,buffer,destination,origin);
+	}
+}
 
+int main() {
+	int n,i;
+stack<int> dt;
+	cout<<"Enter the number of rings";
+	cin>>n;
+	for(i=n-1;i>=0;i--)
+		origin.st.push(i);
+	moveto(n,origin,destination,buffer);
+    	for(dt=destination.st;!dt.empty();dt.pop())
+	cout<<dt.top();
+	return 0;
+}
